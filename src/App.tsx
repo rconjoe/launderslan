@@ -387,7 +387,7 @@ const App = () => (<>
     matches={matches}
     matchComponent={Match}
   />
-  <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '32px' }}>Made by<a href="https://github.com/rconjoe">&nbsp;rconjoe</a></div>
+  <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '32px' }}>Made by<a href="https://github.com/rconjoe">&nbsp;rconjoe</a>. Not affiliated with Launders' LAN.</div>
 </>);
 
 export default App
