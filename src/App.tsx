@@ -126,14 +126,14 @@ const matches = [
     "participants": [
       {
         "id": "qf2a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "0", // Any string works
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.WALMART
       },
       {
         "id": "qf2b",
-        "resultText": "",
+        "resultText": "1",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.EHTEAM
@@ -150,14 +150,14 @@ const matches = [
     "participants": [
       {
         "id": "qf3a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "1", // Any string works
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.FORFUN
       },
       {
         "id": "qf3b",
-        "resultText": "",
+        "resultText": "0",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.STRIFE
