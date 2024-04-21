@@ -1,22 +1,22 @@
-import { SingleEliminationBracket, Match, SVGViewer, createTheme } from '@g-loot/react-tournament-brackets';
-import { useWindowSize } from "@uidotdev/usehooks";
+import { SingleEliminationBracket, Match } from '@g-loot/react-tournament-brackets';
+// import { useWindowSize } from "@uidotdev/usehooks";
 
-const WhiteTheme = createTheme({
-  textColor: { main: '#000000', highlighted: '#07090D', dark: '#3E414D' },
-  matchBackground: { wonColor: '#daebf9', lostColor: '#96c6da' },
-  score: {
-    background: { wonColor: '#87b2c4', lostColor: '#87b2c4' },
-    text: { highlightedWonColor: '#7BF59D', highlightedLostColor: '#FB7E94' },
-  },
-  border: {
-    color: '#CED1F2',
-    highlightedColor: '#da96c6',
-  },
-  roundHeader: { backgroundColor: '#87b2c4', fontColor: '#fff' },
-  connectorColor: '#CED1F2',
-  connectorColorHighlight: '#da96c6',
-  svgBackground: '#FAFAFA',
-});
+// const WhiteTheme = createTheme({
+//   textColor: { main: '#000000', highlighted: '#07090D', dark: '#3E414D' },
+//   matchBackground: { wonColor: '#daebf9', lostColor: '#96c6da' },
+//   score: {
+//     background: { wonColor: '#87b2c4', lostColor: '#87b2c4' },
+//     text: { highlightedWonColor: '#7BF59D', highlightedLostColor: '#FB7E94' },
+//   },
+//   border: {
+//     color: '#CED1F2',
+//     highlightedColor: '#da96c6',
+//   },
+//   roundHeader: { backgroundColor: '#87b2c4', fontColor: '#fff' },
+//   connectorColor: '#CED1F2',
+//   connectorColorHighlight: '#da96c6',
+//   svgBackground: '#FAFAFA',
+// });
 
 const TOP16 = {
   WALMART: "Walmart Door Greeters",
@@ -72,17 +72,17 @@ const matches = [
     "participants": [
       {
         "id": "sf1a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "0", // Any string works
         "isWinner": false,
-        "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
-        "name": "??"
+        "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
+        "name": TOP16.WALMART
       },
       {
         "id": "sf1b",
-        "resultText": "",
+        "resultText": "0",
         "isWinner": false,
-        "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
-        "name": "??"
+        "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
+        "name": TOP16.FORFUN
       }
     ]
   },
@@ -96,14 +96,14 @@ const matches = [
     "participants": [
       {
         "id": "sf2a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "0", // Any string works
         "isWinner": false,
-        "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
-        "name": "??"
+        "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
+        "name": TOP16.FLUFFY
       },
       {
         "id": "sf2b",
-        "resultText": "",
+        "resultText": "0",
         "isWinner": false,
         "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.WILL
@@ -113,7 +113,7 @@ const matches = [
   {
     "id": "qf1",
     "name": "",
-    "nextMatchId": "sf1", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
+    "nextMatchId": "sf2", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
     "tournamentRoundText": "Quarterfinals", // Text for Round Header
     "startTime": "1600 EST",
     "state": "DONE", // 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | 'DONE' | 'SCORE_DONE' Only needed to decide walkovers and if teamNames are TBD (to be decided)
@@ -127,8 +127,8 @@ const matches = [
       },
       {
         "id": "qf1b",
-        "resultText": "1",
-        "isWinner": false,
+        "resultText": "2",
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.FLUFFY
       }
@@ -144,8 +144,8 @@ const matches = [
     "participants": [
       {
         "id": "qf2a", // Unique identifier of any kind
-        "resultText": "0", // Any string works
-        "isWinner": false,
+        "resultText": "2", // Any string works
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.WALMART
       },
@@ -161,21 +161,21 @@ const matches = [
   {
     "id": "qf3",
     "name": "",
-    "nextMatchId": "sf2", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
+    "nextMatchId": "sf1", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
     "tournamentRoundText": "Quarterfinals", // Text for Round Header
     "startTime": "1600 EST",
     "state": "DONE", // 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | 'DONE' | 'SCORE_DONE' Only needed to decide walkovers and if teamNames are TBD (to be decided)
     "participants": [
       {
         "id": "qf3a", // Unique identifier of any kind
-        "resultText": "1", // Any string works
-        "isWinner": false,
+        "resultText": "2", // Any string works
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.FORFUN
       },
       {
         "id": "qf3b",
-        "resultText": "0",
+        "resultText": "1",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.STRIFE
@@ -401,49 +401,13 @@ const matches = [
 ]
 
 const App = () => {
-  const { width, height } = useWindowSize();
+  // const { width, height } = useWindowSize();
   return (
     <SingleEliminationBracket
       matches={matches}
       matchComponent={Match}
-      theme={WhiteTheme}
-      options={{
-        style: {
-          roundHeader: {
-            backgroundColor: WhiteTheme.roundHeader.backgroundColor,
-            fontColor: WhiteTheme.roundHeader.fontColor,
-          },
-          connectorColor: WhiteTheme.connectorColor,
-          connectorColorHighlight: WhiteTheme.connectorColorHighlight,
-        },
-      }}
-      svgWrapper={({ children, ...props }) => ( // ts-ignore
-        <SVGViewer
-          background={WhiteTheme.svgBackground}
-          SVGBackground={WhiteTheme.svgBackground}
-          width={width}
-          height={height}
-          {...props}
-        >
-          {children}
-        </SVGViewer>
-      )}
     />
   );
 };
-
-// const App = () => {
-//   const size = useWindowSize();
-//   return (
-//     <SingleEliminationBracket
-//       matches={matches}
-//       matchComponent={Match}
-//       svgWrapper={({ children, ...props }) => (
-//         <SVGViewer width={size.width} height={size.height} {...props}>
-//           {children}
-//         </SVGViewer>
-//       )}
-//     />)
-// };
 
 export default App
