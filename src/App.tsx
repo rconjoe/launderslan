@@ -1,4 +1,8 @@
-import { SingleEliminationBracket, Match } from '@g-loot/react-tournament-brackets';
+import {
+  SingleEliminationBracket,
+  Match,
+  // SVGViewer 
+} from '@g-loot/react-tournament-brackets';
 // import { useWindowSize } from "@uidotdev/usehooks";
 
 // const WhiteTheme = createTheme({
@@ -43,7 +47,7 @@ const matches = [
     "name": "",
     "nextMatchId": null, // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
     "tournamentRoundText": "Final", // Text for Round Header
-    "startTime": "2100 EST",
+    "startTime": "2200 EST",
     "state": "DONE", // 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | 'DONE' | 'SCORE_DONE' Only needed to decide walkovers and if teamNames are TBD (to be decided)
     "participants": [
       {
@@ -67,7 +71,7 @@ const matches = [
     "name": "",
     "nextMatchId": "f1", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
     "tournamentRoundText": "Semifinal", // Text for Round Header
-    "startTime": "1830 EST",
+    "startTime": "1910 EST",
     "state": "DONE", // 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | 'DONE' | 'SCORE_DONE' Only needed to decide walkovers and if teamNames are TBD (to be decided)
     "participants": [
       {
@@ -91,7 +95,7 @@ const matches = [
     "name": "",
     "nextMatchId": "f1", // Id for the nextMatch in the bracket, if it's final match it must be null OR undefined
     "tournamentRoundText": "Semifinal", // Text for Round Header
-    "startTime": "1830 EST",
+    "startTime": "1910 EST",
     "state": "DONE", // 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | 'DONE' | 'SCORE_DONE' Only needed to decide walkovers and if teamNames are TBD (to be decided)
     "participants": [
       {
