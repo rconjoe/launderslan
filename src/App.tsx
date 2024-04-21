@@ -1,4 +1,22 @@
-import { SingleEliminationBracket, Match } from '@g-loot/react-tournament-brackets';
+import { SingleEliminationBracket, Match, SVGViewer, createTheme } from '@g-loot/react-tournament-brackets';
+import { useWindowSize } from "@uidotdev/usehooks";
+
+const WhiteTheme = createTheme({
+  textColor: { main: '#000000', highlighted: '#07090D', dark: '#3E414D' },
+  matchBackground: { wonColor: '#daebf9', lostColor: '#96c6da' },
+  score: {
+    background: { wonColor: '#87b2c4', lostColor: '#87b2c4' },
+    text: { highlightedWonColor: '#7BF59D', highlightedLostColor: '#FB7E94' },
+  },
+  border: {
+    color: '#CED1F2',
+    highlightedColor: '#da96c6',
+  },
+  roundHeader: { backgroundColor: '#87b2c4', fontColor: '#fff' },
+  connectorColor: '#CED1F2',
+  connectorColorHighlight: '#da96c6',
+  svgBackground: '#FAFAFA',
+});
 
 const TOP16 = {
   WALMART: "Walmart Door Greeters",
@@ -88,7 +106,7 @@ const matches = [
         "resultText": "",
         "isWinner": false,
         "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
-        "name": "??"
+        "name": TOP16.WILL
       }
     ]
   },
@@ -102,14 +120,14 @@ const matches = [
     "participants": [
       {
         "id": "qf1a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "0", // Any string works
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.DOT
       },
       {
         "id": "qf1b",
-        "resultText": "",
+        "resultText": "1",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.FLUFFY
@@ -174,14 +192,14 @@ const matches = [
     "participants": [
       {
         "id": "qf4a", // Unique identifier of any kind
-        "resultText": "", // Any string works
-        "isWinner": false,
+        "resultText": "2", // Any string works
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.WILL
       },
       {
         "id": "qf4b",
-        "resultText": "",
+        "resultText": "0",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.RWS
@@ -382,12 +400,50 @@ const matches = [
   },
 ]
 
-const App = () => (<>
-  <SingleEliminationBracket
-    matches={matches}
-    matchComponent={Match}
-  />
-  <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '32px' }}>Made by<a href="https://github.com/rconjoe">&nbsp;rconjoe</a>. Not affiliated with Launders LAN.</div>
-</>);
+const App = () => {
+  const { width, height } = useWindowSize();
+  return (
+    <SingleEliminationBracket
+      matches={matches}
+      matchComponent={Match}
+      theme={WhiteTheme}
+      options={{
+        style: {
+          roundHeader: {
+            backgroundColor: WhiteTheme.roundHeader.backgroundColor,
+            fontColor: WhiteTheme.roundHeader.fontColor,
+          },
+          connectorColor: WhiteTheme.connectorColor,
+          connectorColorHighlight: WhiteTheme.connectorColorHighlight,
+        },
+      }}
+      svgWrapper={({ children, ...props }) => ( // ts-ignore
+        <SVGViewer
+          background={WhiteTheme.svgBackground}
+          SVGBackground={WhiteTheme.svgBackground}
+          width={width}
+          height={height}
+          {...props}
+        >
+          {children}
+        </SVGViewer>
+      )}
+    />
+  );
+};
+
+// const App = () => {
+//   const size = useWindowSize();
+//   return (
+//     <SingleEliminationBracket
+//       matches={matches}
+//       matchComponent={Match}
+//       svgWrapper={({ children, ...props }) => (
+//         <SVGViewer width={size.width} height={size.height} {...props}>
+//           {children}
+//         </SVGViewer>
+//       )}
+//     />)
+// };
 
 export default App
