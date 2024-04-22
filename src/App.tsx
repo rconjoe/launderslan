@@ -76,7 +76,7 @@ const matches = [
     "participants": [
       {
         "id": "sf1a", // Unique identifier of any kind
-        "resultText": "0", // Any string works
+        "resultText": "1", // Any string works
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.WALMART
@@ -100,7 +100,7 @@ const matches = [
     "participants": [
       {
         "id": "sf2a", // Unique identifier of any kind
-        "resultText": "0", // Any string works
+        "resultText": "1", // Any string works
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.FLUFFY
