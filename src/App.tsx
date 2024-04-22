@@ -61,8 +61,8 @@ const matches = [
         "id": "f1b",
         "resultText": "",
         "isWinner": false,
-        "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
-        "name": "??"
+        "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
+        "name": TOP16.FLUFFY
       }
     ]
   },
@@ -83,7 +83,7 @@ const matches = [
       },
       {
         "id": "sf1b",
-        "resultText": "0",
+        "resultText": "1",
         "isWinner": false,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.FORFUN
@@ -100,8 +100,8 @@ const matches = [
     "participants": [
       {
         "id": "sf2a", // Unique identifier of any kind
-        "resultText": "1", // Any string works
-        "isWinner": false,
+        "resultText": "2", // Any string works
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.FLUFFY
       },
