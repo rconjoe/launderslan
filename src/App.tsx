@@ -55,7 +55,7 @@ const matches = [
         "resultText": "", // Any string works
         "isWinner": false,
         "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
-        "name": "??"
+        "name": TOP16.FORFUN
       },
       {
         "id": "f1b",
@@ -83,8 +83,8 @@ const matches = [
       },
       {
         "id": "sf1b",
-        "resultText": "1",
-        "isWinner": false,
+        "resultText": "2",
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.FORFUN
       }
