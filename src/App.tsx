@@ -52,15 +52,15 @@ const matches = [
     "participants": [
       {
         "id": "f1a", // Unique identifier of any kind
-        "resultText": "", // Any string works
+        "resultText": "1", // Any string works
         "isWinner": false,
-        "status": "NO_PARTY", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
+        "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY' | null
         "name": TOP16.FORFUN
       },
       {
         "id": "f1b",
-        "resultText": "",
-        "isWinner": false,
+        "resultText": "2",
+        "isWinner": true,
         "status": "PLAYED", // 'PLAYED' | 'NO_SHOW' | 'WALK_OVER' | 'NO_PARTY'
         "name": TOP16.FLUFFY
       }
